@@ -6,18 +6,15 @@ import { UndoEffects } from './undo.effects';
 import { undoMetaReducer } from './undo.meta';
 import { undoReducer, UndoState } from './undo.reducer';
 
+export const undoFeatureKey = 'undo'
 export interface State {
-  undo: UndoState
+  [undoFeatureKey]: UndoState
 }
 
 @NgModule({
   imports: [
-    StoreModule.forFeature<State>(
-      'undo', 
-      { undo: undoReducer }, 
-      { metaReducers: [undoMetaReducer] }
-    ),
+    StoreModule.forFeature<UndoState>(undoFeatureKey, undoReducer),
     EffectsModule.forFeature([UndoEffects]),
   ],
 })
-export class NgrxUndoEffectsModule { }
+export class NgrxUndoEffectsModule {}

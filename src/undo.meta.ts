@@ -12,7 +12,7 @@ export function undoMetaReducer(
     action: UndoableAction<State>
   ) => {
     if (action.getUndoAction) {
-      if (state && state.undo.inProgress !== null) {
+      if (state && !!state.undo.inProgress) {
         state = reducer(state, undoActions.completeUndoLastAction());
       } else {
         state = reducer(
