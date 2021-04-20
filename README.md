@@ -52,7 +52,7 @@ this.undoActions$ = this.store.pipe(select(undoActions));
 
 If we have a key in the store called name as follows:
 
-```json
+```ts
 {
   name: string;
 }
@@ -76,7 +76,7 @@ Here we can see that we are creating a new action (`updateName`), with a payload
 
 Here is a more complex example which would require the use of the `action` parameter. Consider the scenario of updating an array of items. For example, if we have a key in the store with a list of items as follows:
 
-```json
+```ts
 {
   items: [
     { id: number, name: string }
@@ -111,7 +111,7 @@ Here we can see that we are creating a new action (`updateItemNames`), with a pa
 
 ## Creating New Undo-able Actions
 
-Due in large part to the code in `posts.undo.ts`, the creation of new undo-able action is simple, using the `createUndoableSuccessAction` function.
+The creation of new undo-able action is simple, using the `createUndoableSuccessAction` function.
 
 ```ts
 // Create the request action normally, using `createAction`
