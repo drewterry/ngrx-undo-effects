@@ -1,0 +1,37 @@
+{
+  "$schema": "./node_modules/ng-packagr/package.schema.json",
+  "name": "ngrx-undo-effects",
+  "version": "0.1.0",
+  "description": "Enables undo-able actions with side effects for NgRx",
+  "scripts": {
+    "build": "ng-packagr -p package.json",
+    "publish": "npm publish ./dist"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/drewterry/ngrx-undo-effects.git"
+  },
+  "keywords": [
+    "ngrx",
+    "undo"
+  ],
+  "author": "Drew Terry",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/drewterry/ngrx-undo-effects/issues"
+  },
+  "homepage": "https://github.com/drewterry/ngrx-undo-effects#readme",
+  "ngPackage": {
+    "lib": {
+      "entryFile": "public_api.ts"
+    }
+  },
+  "peerDependencies": {
+    "@angular/core": ">=9.0.0",
+    "@ngrx/effects": "^11.1.1",
+    "@ngrx/store": "^11.1.1"
+  },
+  "devDependencies": {
+    "ng-packagr": "^11.2.4"
+  }
+}
